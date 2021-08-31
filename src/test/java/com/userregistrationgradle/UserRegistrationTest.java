@@ -201,7 +201,7 @@ public class UserRegistrationTest {
 	@Test
 	public void givenEmailID_WhenWithTwoSymbol_ShouldReturnFalse() {
 		UserRegistration userRegistration = new UserRegistration();
-		boolean result = userRegistration.validateEmailId("devesh@2002@com.m");
+		boolean result = userRegistration.validateEmailId("devesh@2002@com.c");
 		Assert.assertEquals(false, result);
 	}
 	
