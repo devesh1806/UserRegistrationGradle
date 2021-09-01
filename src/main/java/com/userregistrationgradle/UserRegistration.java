@@ -9,29 +9,54 @@ public class UserRegistration {
 	private static final String MOBILE_NUMBER_PATTERN = "^[0-9-]{1,}\\s[0-9]{10}$";
 	private static final String PASSWORD_PATTERN = "^(?=.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\\W).*$";
 	
-	public boolean validateFirstName(String name) {
-		Pattern pattern = Pattern.compile(NAME_PATTERN);
-		return pattern.matcher(name).matches();
+	public boolean validateFirstName(String name) throws MoodAnalysisException {
+		try {
+			Pattern pattern = Pattern.compile(NAME_PATTERN);
+			return pattern.matcher(name).matches();
+		}
+		catch (NullPointerException exception) {
+			throw new MoodAnalysisException("Invalid Input.");
+		}
 	}
 	
-	public boolean validateLastName(String name) {
-		Pattern pattern = Pattern.compile(NAME_PATTERN);
-		return pattern.matcher(name).matches();
+	public boolean validateLastName(String name) throws MoodAnalysisException{
+		try {
+			Pattern pattern = Pattern.compile(NAME_PATTERN);
+			return pattern.matcher(name).matches();
+		}
+		catch (NullPointerException exception) {
+			throw new MoodAnalysisException("Invalid Input.");
+		}
 	}
 	
-	public boolean validateEmailId(String email) {
-		Pattern pattern = Pattern.compile(EMAIL_ID_PATTERN);
-		return pattern.matcher(email).matches();
+	public boolean validateEmailId(String email) throws MoodAnalysisException{
+		try {
+			Pattern pattern = Pattern.compile(EMAIL_ID_PATTERN);
+			return pattern.matcher(email).matches();
+		}
+		catch (NullPointerException exception) {
+			throw new MoodAnalysisException("Invalid Input.");
+		}
 	}
 	
-	public boolean validateMobileNumber(String number) {
-		Pattern pattern = Pattern.compile(MOBILE_NUMBER_PATTERN);
-		return pattern.matcher(number).matches();
+	public boolean validateMobileNumber(String number) throws MoodAnalysisException{
+		try {
+			Pattern pattern = Pattern.compile(MOBILE_NUMBER_PATTERN);
+			return pattern.matcher(number).matches();
+		}
+		catch(NullPointerException exception) {
+			throw new MoodAnalysisException("Invalid Input.");
+		}
 	}
 	
-	public boolean validatePassword(String password) {
-		Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
-		return pattern.matcher(password).matches();
+	public boolean validatePassword(String password) throws MoodAnalysisException{
+		try {
+			Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+			return pattern.matcher(password).matches();
+		}
+		catch(NullPointerException exception) {
+			throw new MoodAnalysisException("Invalid Input.");
+		}
 	}
 	
 }
