@@ -2,9 +2,16 @@ package com.userregistrationgradle;
 
 import java.util.regex.Pattern;
 
-public class UserRegistrationLambdaTest {
+@FunctionalInterface
+interface IRegistration{
+	boolean validate(String input);
+	static void printFormat(String n,String name,IRegistration obj) {
+		System.out.println(name + " Validation of "+ n + " is "+obj.validate(n));
+	}
+}
+
+public class UserRegistrationLambda {
 	public static void main(String[] args) {
-		
 		IRegistration firstName = n ->{
 			try {
 				Pattern pattern = Pattern.compile("^[A-Z][a-z]{3,}");
@@ -55,8 +62,9 @@ public class UserRegistrationLambdaTest {
 				return false;
 			}
 		};
+
 		
-		
+//		TestCases for Lambda Implementation
 		IRegistration.printFormat("devesh", "Firstname", firstName);
 		IRegistration.printFormat("Devesh", "Firstname", firstName);
 		IRegistration.printFormat("De", "Firstname", firstName);
@@ -82,6 +90,6 @@ public class UserRegistrationLambdaTest {
 		IRegistration.printFormat("abc100@", "Password", password);
 		IRegistration.printFormat("asdafxcZ123", "Password", password);
 		IRegistration.printFormat("Abc100@123", "Password", password);
-		
+
 	}
 }

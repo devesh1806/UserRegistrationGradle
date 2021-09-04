@@ -2,13 +2,6 @@ package com.userregistrationgradle;
 
 import java.util.regex.Pattern;
 
-@FunctionalInterface
-interface IRegistration{
-	boolean validate(String input);
-	static void printFormat(String n,String name,IRegistration obj) {
-		System.out.println(name + " Validation of "+ n + " is "+obj.validate(n));
-	}
-}
 
 public class UserRegistration {
 	
